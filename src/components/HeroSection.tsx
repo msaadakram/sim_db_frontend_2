@@ -70,19 +70,19 @@ export function HeroSection({ onSearch }: HeroSectionProps) {
                 transition={{ delay: 0.3 }}
                 className="text-xs sm:text-sm uppercase tracking-wider mb-3 sm:mb-4 text-white/90"
               >
-                Official PTA Methods & SIM Verification Guide for Pakistan
+                Check SIM Owner Details Online | Phone Number Details & Mobile Number Details
               </motion.p>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Master Official SIM Verification Methods in Pakistan
+                Check SIM Owner Details Online & Phone Number Details Instantly
               </h1>
               <h2 className="text-lg sm:text-xl md:text-2xl mb-4 text-white/90" style={{ fontFamily: "'Inter', sans-serif" }}>
-                Learn Official PTA Methods, 668 Guide & Legal SIM Verification Process
+                Find SIM Details by Number, Mobile Number Details with Name & Address
               </h2>
               <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white/90 max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "'Inter', sans-serif" }}>
-                Comprehensive guide to verify your own SIM details officially. Learn the 668 method, understand PTA regulations, discover legal verification pathways, and protect your identity with official Pakistani telecom procedures.
+                Instantly check SIM owner details online, find phone number details, and get mobile number details with name and address. Use our SIM number check tool, sim details by number, and live tracker sim data features. Fast, reliable SIM information system for SIM owner details by number and SIM number details online check.
               </p>
             </motion.div>
 
@@ -136,8 +136,8 @@ export function HeroSection({ onSearch }: HeroSectionProps) {
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder={
                         activeTab === 'number'
-                          ? 'Enter your mobile number (e.g., 03001234567) to verify'
-                          : 'Enter your CNIC (e.g., 12345-1234567-1) to verify'
+                          ? 'Enter mobile number (e.g., 03001234567) for SIM owner details & phone number details'
+                          : 'Enter CNIC (e.g., 12345-1234567-1) for SIM details by number & number check'
                       }
                       className="w-full pl-12 pr-4 py-4 sm:py-5 text-foreground bg-muted/50 rounded-2xl outline-none border-2 border-transparent focus:border-accent transition-all duration-300 text-sm sm:text-base"
                       style={{ fontFamily: "'Inter', sans-serif" }}
@@ -150,8 +150,8 @@ export function HeroSection({ onSearch }: HeroSectionProps) {
                     <HelpCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
                     <p style={{ fontFamily: "'Inter', sans-serif" }}>
                       {activeTab === 'number'
-                        ? 'Verify your own SIM details using official PTA methods'
-                        : 'Learn about SIMs linked to your CNIC identity'}
+                        ? 'Get SIM owner details online, phone number details, and mobile number details with name'
+                        : 'Find SIM details by number, SIM number details, and check SIM owner name by mobile number online'}
                     </p>
                   </div>
 
@@ -164,7 +164,7 @@ export function HeroSection({ onSearch }: HeroSectionProps) {
                   >
                     <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     <span style={{ fontFamily: "'Inter', sans-serif" }}>
-                      Learn Official Method
+                      Check SIM Owner Details & Phone Number Details
                     </span>
                   </motion.button>
                 </div>
@@ -198,17 +198,17 @@ export function HeroSection({ onSearch }: HeroSectionProps) {
               transition={{ delay: 0.9 }}
               className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 max-w-xl mx-auto lg:mx-0"
             >
-              <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>7+</h3>
-                <p className="text-xs sm:text-sm text-white/80">Official Methods</p>
+                <div className="text-center">
+                <h3 className="text-2xl sm:text-3xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>500K+</h3>
+                <p className="text-xs sm:text-sm text-white/80">SIM Owner Details</p>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>100%</h3>
-                <p className="text-xs sm:text-sm text-white/80">Legal & Approved</p>
+                <h3 className="text-2xl sm:text-3xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>99.9%</h3>
+                <p className="text-xs sm:text-sm text-white/80">Phone Number Details</p>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Free</h3>
-                <p className="text-xs sm:text-sm text-white/80">Educational</p>
+                <h3 className="text-2xl sm:text-3xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>24/7</h3>
+                <p className="text-xs sm:text-sm text-white/80">Mobile Number Check</p>
               </div>
             </motion.div>
           </div>

@@ -58,10 +58,10 @@ export function CTASection() {
                     className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 leading-tight"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Ready to Learn Official SIM Verification Methods?
+                    Ready to Check SIM Owner Details & Phone Number Details Online?
                   </h2>
                   <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    Access comprehensive guides on PTA regulations, 668 method, and official verification processes. Protect yourself with legitimate knowledge and legal procedures.
+                    Access comprehensive tools to check SIM owner details online, find phone number details, get mobile number details with name, and run SIM number check. Use sim details by number, live tracker sim data, and SIM information system for instant, reliable results.
                   </p>
 
                   <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -70,7 +70,7 @@ export function CTASection() {
                       whileTap={{ scale: 0.95 }}
                       className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-sm sm:text-base"
                     >
-                      <span>View All Guides</span>
+                      <span>Check SIM Owner Details</span>
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </motion.button>
 
@@ -79,7 +79,7 @@ export function CTASection() {
                       whileTap={{ scale: 0.95 }}
                       className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-full hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                     >
-                      Get Personalized Help
+                      Find Phone Number Details
                     </motion.button>
                   </div>
                 </motion.div>
@@ -99,10 +99,10 @@ export function CTASection() {
                     </div>
                     <div className="min-w-0">
                       <h3 className="text-white mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        PTA Official Methods
+                        SIM Owner Details Online Check
                       </h3>
                       <p className="text-white/80 text-xs sm:text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Learn verified procedures approved by Pakistan telecom authority
+                        Check sim owner details by number and get phone number details instantly
                       </p>
                     </div>
                   </div>
@@ -117,10 +117,10 @@ export function CTASection() {
                     </div>
                     <div className="min-w-0">
                       <h3 className="text-white mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        Easy 668 Guide
+                        SIM Number Check & Details by Number
                       </h3>
                       <p className="text-white/80 text-xs sm:text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Step-by-step instructions for USSD-based SIM verification
+                        Get sim number details, sim details by number, and mobile number details with name
                       </p>
                     </div>
                   </div>
@@ -135,10 +135,10 @@ export function CTASection() {
                     </div>
                     <div className="min-w-0">
                       <h3 className="text-white mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        100% Legal Framework
+                        Live Tracker SIM Data & Number Verification
                       </h3>
                       <p className="text-white/80 text-xs sm:text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Complete telecom law documentation and compliance guidelines
+                        Access live tracker sim data, number verification, and SIM information system
                       </p>
                     </div>
                   </div>

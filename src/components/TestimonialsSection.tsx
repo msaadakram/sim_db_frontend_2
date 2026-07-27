@@ -9,21 +9,21 @@ const testimonials = [
   {
     name: 'Ahmed Hassan',
     role: 'Business Owner',
-    content: 'This service helped me verify employee information quickly and accurately. The CNIC verification feature is absolutely fantastic!',
+    content: 'I use this SIM owner details online check tool to verify phone number details for employee records. The mobile number details with name are incredibly accurate and fast.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop'
   },
   {
     name: 'Fatima Khan',
     role: 'Security Analyst',
-    content: 'The live location tracking is incredibly precise. We use this service daily for security purposes and it never disappoints.',
+    content: 'We use this service daily for SIM number check, phone number details verification, and number verification. The live tracker sim data and sim details by number features are outstanding.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop'
   },
   {
     name: 'Ali Raza',
     role: 'Private Investigator',
-    content: 'Best SIM tracking service I have used. The detailed reports and instant results make my job so much easier.',
+    content: 'Best SIM owner details by number tool I have used. The mobile number details with owner name and address are extremely helpful. The sim number details online check feature makes my job so much easier.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop'
   }
@@ -65,15 +65,15 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <p className="text-white/80 text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">Testimonials</p>
+          <p className="text-white/80 text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">SIM Owner Details & Mobile Number Check Reviews</p>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl text-white mb-3 sm:mb-4 px-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            What our clients say
+            What Users Say About SIM Owner Details & Phone Number Details
           </h2>
           <p className="text-white/90 text-base sm:text-lg max-w-2xl mx-auto px-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Trusted by thousands of satisfied customers across Pakistan
+            Trusted by thousands for SIM owner details online, phone number details, mobile number details, SIM number check, and live tracker sim data across Pakistan
           </p>
         </motion.div>
 

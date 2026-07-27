@@ -7,26 +7,26 @@ import { useEffect, useRef, useState } from 'react';
 const steps = [
   {
     icon: Search,
-    title: 'Enter Details',
-    description: 'Simply enter the mobile number or CNIC you want to search for in our secure search box.',
+    title: 'Enter Number or CNIC',
+    description: 'Enter the mobile number or CNIC for SIM owner details online check, phone number details, and mobile number details lookup.',
     step: '01'
   },
   {
     icon: Database,
-    title: 'System Analysis',
-    description: 'Our advanced AI algorithms scan multiple databases to gather comprehensive information.',
+    title: 'SIM Information System',
+    description: 'Our SIM information system scans databases to find sim details by number, sim number details, and sim owner details by number.',
     step: '02'
   },
   {
     icon: CheckCircle,
-    title: 'Verification',
-    description: 'All data is verified through multiple sources to ensure 99.9% accuracy and authenticity.',
+    title: 'Number Verification',
+    description: 'All SIM data is verified through number verification, sim number check, and number check for 99.9% accurate phone number details.',
     step: '03'
   },
   {
     icon: Download,
-    title: 'Get Results',
-    description: 'Receive detailed results instantly with options to download comprehensive PDF reports.',
+    title: 'Get SIM Owner Details',
+    description: 'Receive sim owner details online, mobile number details with name, and live tracker sim data results instantly with downloadable reports.',
     step: '04'
   }
 ];
@@ -67,15 +67,15 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <p className="text-accent text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">Simple Process</p>
+          <p className="text-accent text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">SIM Owner Details Online Check</p>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl text-primary mb-3 sm:mb-4 px-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            How it works
+            How to Check SIM Owner Details & Phone Number Details
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Get comprehensive SIM details in just four simple steps
+            Get SIM owner details, mobile number details, and sim number check in just four simple steps
           </p>
         </motion.div>
 
@@ -163,7 +163,7 @@ export function HowItWorksSection() {
             whileTap={{ scale: 0.95 }}
             className="px-8 sm:px-10 py-3 sm:py-4 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
-            Start Searching Now
+            Check SIM Owner Details Online Now
           </motion.button>
         </motion.div>
       </div>

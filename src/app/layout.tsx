@@ -1,53 +1,41 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { getSiteUrl } from '@/lib/site-url';
+import { generateMeta, generateStructuredData, generateOrganizationSchema } from '@/lib/generate-meta';
 
 const SITE_URL = getSiteUrl();
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: 'Official PTA SIM Verification Guide Pakistan',
-    template: '%s | PTA SIM Guide',
-  },
+export const metadata = generateMeta({
+  title: 'SIM Owner Details | Phone Number Details & Mobile Number Check Online',
   description:
-    'Learn official PTA methods, the 668 SIM verification guide, SIM registration laws, fraud reporting steps, and legal telecom education for Pakistan.',
-  openGraph: {
-    type: 'website',
-    siteName: 'PTA SIM Guide',
-    locale: 'en_US',
-    title: 'Official PTA SIM Verification Guide Pakistan',
-    description:
-      'Educational guides on official PTA SIM verification, 668 method usage, telecom laws, and legal fraud prevention in Pakistan.',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Official PTA SIM Verification Guide Pakistan',
-    description:
-      'Learn the official PTA 668 method, SIM registration rules, and legal verification steps for Pakistan.',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
-    ],
-    shortcut: '/favicon-32x32.png',
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-  },
-};
+    'Check SIM owner details online, find phone number details, mobile number details, and SIM number check instantly. Verified SIM information system with sim owner details by number, sim details by number, and live tracker sim data.',
+  path: '/',
+  surface: 'home',
+  type: 'website',
+  images: ['/og-default.png'],
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = generateStructuredData('website', {});
+  const orgSchema = generateOrganizationSchema();
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );

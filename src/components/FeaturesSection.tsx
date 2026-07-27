@@ -7,50 +7,50 @@ import { useEffect, useRef, useState } from 'react';
 const features = [
   {
     icon: MapPin,
-    title: 'PTA Official Guidelines',
-    description: 'Learn official Pakistan Telecommunication Authority rules for SIM registration, verification, and legal procedures.',
+    title: 'SIM Owner Details Online Check',
+    description: 'Check SIM owner details online and find phone number details with our verified SIM information system and mobile number details lookup.',
     color: '#7DB9BC'
   },
   {
     icon: Shield,
-    title: '668 Method Tutorial',
-    description: 'Complete guide on using the 668 USSD code for official SIM verification through PTA channels.',
+    title: 'SIM Details by Number',
+    description: 'Get sim details by number, sim number details, and SIM owner details by number instantly with our accurate SIM data information tool.',
     color: '#5A9EA1'
   },
   {
     icon: Phone,
-    title: 'Self-SIM Verification',
-    description: 'Learn how to verify your own SIM details, check linked SIMs to your CNIC, and ensure account security.',
+    title: 'Phone Number Details with Name',
+    description: 'Find phone number details with name, mobile number details with owner name and address, and phone number owner name using our number lookup service.',
     color: '#7DB9BC'
   },
   {
     icon: UserCheck,
-    title: 'Identity Protection',
-    description: 'Understand how to protect your identity, detect unauthorized SIM registrations, and report misuse legally.',
+    title: 'Mobile Number Details & Identity Check',
+    description: 'Verify mobile number details, check sim owner name by mobile number online, and protect your identity with SIM identity check and number verification.',
     color: '#5A9EA1'
   },
   {
     icon: Globe,
-    title: 'Telecom System Overview',
-    description: 'Educational content about Pakistan telecom structure, carrier networks, and how SIM registration systems work.',
+    title: 'Live Tracker SIM Data',
+    description: 'Access live tracker sim data, live tracker mobile number details, and live tracker all network details for comprehensive SIM data tracking.',
     color: '#7DB9BC'
   },
   {
     icon: Clock,
-    title: 'Fraud Detection Guide',
-    description: 'Learn to identify telecom scams, spoofing attempts, SIM hijacking, and how to escalate issues with authorities.',
+    title: 'SIM Number Check & Verification',
+    description: 'Perform SIM number check, sim number details online check, number check, and number verification quickly with our fast sim check tools.',
     color: '#5A9EA1'
   },
   {
     icon: Search,
-    title: 'Complaint Process',
-    description: 'Step-by-step guide on filing complaints with PTA, operators, and FIA for SIM-related disputes and fraud.',
+    title: 'Check SIM Owner Details by Number',
+    description: 'Check sim owner details, check sim owner name by mobile number, and find out phone number owner with our reliable owner lookup features.',
     color: '#7DB9BC'
   },
   {
     icon: FileText,
-    title: 'Legal Framework',
-    description: 'Comprehensive documentation of Pakistani telecom laws, SIM regulations, and what constitutes illegal activity.',
+    title: 'SIM Information System & Data Check',
+    description: 'Use our SIM information system for sim data check, sim information with number, sim data information, and complete SIM details check online.',
     color: '#5A9EA1'
   }
 ];
@@ -91,15 +91,15 @@ export function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <p className="text-accent text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">Comprehensive Educational Guides</p>
+          <p className="text-accent text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">SIM Owner Details & Phone Number Details Tools</p>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl text-primary mb-3 sm:mb-4 px-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Master Official SIM Verification & PTA Methods
+            Check SIM Owner Details, Phone Number Details & Mobile Number Details
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Complete guides on official methods, telecom regulations, identity protection, and legal procedures for SIM verification in Pakistan. Learn from trusted sources and official PTA guidelines.
+            Complete tools to check SIM owner details online, find phone number details with name, get mobile number details with owner name and address, and run SIM number check. Use sim details by number, live tracker sim data, and SIM information system for fast, reliable results.
           </p>
         </motion.div>
 

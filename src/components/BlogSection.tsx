@@ -98,16 +98,16 @@ export function BlogSection({ initialPosts }: BlogSectionProps) {
             className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full mb-4"
           >
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-accent text-xs sm:text-sm uppercase tracking-wider">Latest Insights</span>
+            <span className="text-accent text-xs sm:text-sm uppercase tracking-wider">SIM Owner Details & Phone Number Details Insights</span>
           </motion.div>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-primary mb-4 px-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Discover Our Blog
+            SIM Owner Details & Phone Number Details Blog
           </h2>
           <p className="text-muted-foreground text-lg sm:text-xl max-w-3xl mx-auto px-4 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Explore expert insights, comprehensive guides, and the latest trends in SIM tracking technology
+            Explore expert insights on SIM owner details online check, phone number details, mobile number details, SIM number check, and live tracker sim data
           </p>
         </motion.div>
 
@@ -366,7 +366,7 @@ export function BlogSection({ initialPosts }: BlogSectionProps) {
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               <span className="relative z-10 flex items-center gap-2">
-                Explore More Articles
+                Explore More SIM Owner Details Articles
                 <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>

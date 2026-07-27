@@ -4,40 +4,15 @@ import { Header } from '@/components/Header';
 import { GlobalSearchCard } from '@/components/GlobalSearchCard';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { DisclaimerPage as DisclaimerPageContent } from '@/components/DisclaimerPage';
-import { getSiteUrl } from '@/lib/site-url';
-import { SEO_SITE_NAME } from '@/lib/next-seo';
+import { generateMeta } from '@/lib/generate-meta';
 
-const SITE_URL = getSiteUrl();
-
-export const metadata: Metadata = {
-    title: 'SIM OWNER DETAIL Disclaimer | Legal, Privacy and Data Use',
-    description: 'Review SIM OWNER DETAIL legal, privacy, and acceptable-use policies for SIM/CNIC verification content, data handling, and user responsibilities in Pakistan.',
-    keywords: [
-        'sim owner detail disclaimer',
-        'sim verification legal policy',
-        'cnic verification privacy policy',
-        'acceptable use sim lookup',
-    ],
-    alternates: {
-        canonical: `${SITE_URL}/disclaimer`,
-    },
-    openGraph: {
-        title: 'SIM OWNER DETAIL Disclaimer | Legal, Privacy and Data Use',
-        description: 'Read legal and privacy guidance for SIM and CNIC verification content, data handling rules, and responsible user obligations in Pakistan.',
-        url: `${SITE_URL}/disclaimer`,
-        siteName: SEO_SITE_NAME,
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary',
-        title: 'SIM OWNER DETAIL Disclaimer | Legal and Privacy Policy',
-        description: 'Understand legal and privacy boundaries for SIM/CNIC verification usage and content publication in Pakistan.',
-    },
-    robots: {
-        index: true,
-        follow: true,
-    },
-};
+export const metadata = generateMeta({
+    title: 'SIM Owner Details Disclaimer | Legal, Privacy & SIM Owner Details Online Check Policy',
+    description: 'Review SIM Owner Details legal, privacy, and acceptable-use policies for SIM owner details online check, phone number details, mobile number details with name, SIM number check, sim details by number, and live tracker sim data content, data handling, and user responsibilities in Pakistan.',
+    path: '/disclaimer',
+    surface: 'disclaimer',
+    type: 'website',
+});
 
 const Footer = lazy(() => import('@/components/Footer').then(m => ({ default: m.Footer })));
 

@@ -21,7 +21,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-white/70 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Your trusted partner for comprehensive SIM card tracking and verification services.
+              Your trusted platform for SIM owner details online check, phone number details, mobile number details with name, SIM number check, sim details by number, and live tracker sim data.
             </p>
             <div className="flex gap-3 sm:gap-4">
               <motion.a
@@ -66,22 +66,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
               <li>
-                <a href="#home" className="text-white/70 hover:text-accent transition-colors">Home</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Owner Details Online Check</a>
               </li>
               <li>
-                <a href="#features" className="text-white/70 hover:text-accent transition-colors">Features</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">Phone Number Details with Name</a>
               </li>
               <li>
-                <a href="#blog" className="text-white/70 hover:text-accent transition-colors">Blog</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">Mobile Number Details Check</a>
               </li>
               <li>
-                <a href="#apps" className="text-white/70 hover:text-accent transition-colors">Apps</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Number Check Tool</a>
               </li>
               <li>
-                <a href="#disclaimer" className="text-white/70 hover:text-accent transition-colors">Disclaimer</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Details by Number</a>
               </li>
               <li>
-                <a href="#contact" className="text-white/70 hover:text-accent transition-colors">Contact</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">Live Tracker SIM Data</a>
               </li>
             </ul>
           </div>
@@ -93,19 +93,19 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Location Tracking</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Owner Details by Number</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">CNIC Verification</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">Phone Number Owner Lookup</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Number Details</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">Number Verification & Check</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Owner Information</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">Mobile Number Owner Name Search</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Network Analysis</a>
+                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Information System</a>
               </li>
             </ul>
           </div>
@@ -140,11 +140,10 @@ export function Footer() {
 
         <div className="mb-8 sm:mb-12 rounded-2xl border border-white/15 bg-white/5 p-5 sm:p-6">
           <h3 className="text-lg sm:text-xl mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Built for trustworthy verification guidance
+            SIM Owner Details & Phone Number Details Platform
           </h3>
           <p className="text-white/85 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-            We publish practical, privacy-conscious resources to help users understand SIM and CNIC verification workflows in Pakistan.
-            Our focus is clear guidance, secure usage, and legally compliant best practices.
+            We provide practical, privacy-conscious tools to help users check SIM owner details online, find phone number details, get mobile number details with name, and run SIM number check with verified SIM information system. Our focus is fast, reliable SIM owner details by number, sim details by number, and live tracker sim data for Pakistan.
           </p>
         </div>
 
@@ -152,7 +151,7 @@ export function Footer() {
         <div className="pt-6 sm:pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-white/70 text-xs sm:text-sm text-center md:text-left" style={{ fontFamily: "'Inter', sans-serif" }}>
-              © {currentYear} SIM OWNER DETAIL. All rights reserved.
+              © {currentYear} SIM Owner Details & Phone Number Details. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
               <a href="#" className="text-white/70 hover:text-accent transition-colors">Privacy Policy</a>

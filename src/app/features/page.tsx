@@ -4,11 +4,8 @@ import { Header } from '@/components/Header';
 import { GlobalSearchCard } from '@/components/GlobalSearchCard';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { FeaturesPage as FeaturesPageContent } from '@/components/FeaturesPage';
-import { getSiteUrl } from '@/lib/site-url';
-import { getPageKeywordSet } from '@/lib/seo-keywords';
-import { SEO_SITE_NAME } from '@/lib/next-seo';
+import { generateMeta } from '@/lib/generate-meta';
 
-const SITE_URL = getSiteUrl();
 const FEATURES_FAQ_JSON_LD = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -40,30 +37,13 @@ const FEATURES_FAQ_JSON_LD = {
     ],
 } as const;
 
-export const metadata: Metadata = {
-    title: 'SIM Verification Features | CNIC and Number Check Tools',
-    description: 'Explore SIM OWNER DETAIL features for CNIC verification, SIM number checks, tracking safeguards, and secure identity workflows tailored for users in Pakistan.',
-    keywords: getPageKeywordSet('features', 14),
-    alternates: {
-        canonical: `${SITE_URL}/features`,
-    },
-    openGraph: {
-        title: 'SIM Verification Features | CNIC and Number Check Tools',
-        description: 'Explore practical SIM verification features including CNIC-linked checks, number insights, and identity protection workflows in Pakistan.',
-        url: `${SITE_URL}/features`,
-        siteName: SEO_SITE_NAME,
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'SIM Verification Features for Pakistan | SIM OWNER DETAIL',
-        description: 'Explore secure features for SIM checks, CNIC verification, and number intelligence workflows in Pakistan.',
-    },
-    robots: {
-        index: true,
-        follow: true,
-    },
-};
+export const metadata = generateMeta({
+  title: 'SIM Owner Details Features | SIM Owner Details Online Check, Phone Number Details & SIM Number Check Tools',
+  description: 'Explore SIM Owner Details features for SIM owner details online check, phone number details with name, mobile number details with owner name, SIM number check, sim details by number, and live tracker sim data tools in Pakistan.',
+  path: '/features',
+  surface: 'features',
+  type: 'website',
+});
 
 const Footer = lazy(() => import('@/components/Footer').then(m => ({ default: m.Footer })));
 

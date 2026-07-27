@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
 import { HomeContent } from '@/components/HomeContent';
 import { getHomepageBlogPosts } from '@/lib/blog';
+import { generateMeta } from '@/lib/generate-meta';
 
-export const revalidate = 60;
-
-export const metadata: Metadata = {
-  title: 'Official PTA SIM Verification Guide Pakistan | 668 Method & Legal SIM Checks',
+export const metadata = generateMeta({
+  title: 'SIM Owner Details Online | Phone Number Details, Mobile Number Details & SIM Number Check',
   description:
-    'Learn official PTA methods to verify your own SIMs, understand the 668 guide, and follow legal telecom and fraud-reporting steps in Pakistan.',
-};
+    'Check SIM owner details online instantly. Find phone number details, mobile number details with name, SIM number check, sim details by number, and live tracker sim data. Fast, reliable SIM information system for SIM owner details by number online.',
+  path: '/',
+  surface: 'home',
+  type: 'website',
+  images: ['/og-default.png'],
+});
 
 export default async function Page() {
   const blogPosts = getHomepageBlogPosts(6);

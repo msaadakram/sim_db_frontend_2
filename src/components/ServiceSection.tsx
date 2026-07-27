@@ -31,12 +31,12 @@ export function ServiceSection() {
   }, []);
 
   const services = [
-    'Pakistan SIM details check by mobile number',
-    'CNIC details verification and linked SIM lookup',
-    'SIM owner details and identity match checks',
-    'Network provider and SIM status information',
-    'SIM activation and registration insights',
-    'Secure number intelligence and risk analysis'
+    'Check SIM owner details online and find phone number details instantly',
+    'SIM details by number, SIM number details, and SIM owner details by number lookup',
+    'Mobile number details with owner name and address verification',
+    'Phone number details with name, phone number owner name, and number lookup',
+    'Live tracker sim data, live tracker mobile number details, and sim data tracking',
+    'SIM number check, number check, number verification, and SIM information system'
   ];
 
   return (
@@ -49,20 +49,20 @@ export function ServiceSection() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-accent text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">Trusted in Pakistan</p>
+            <p className="text-accent text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">SIM Owner Details & Phone Number Details</p>
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl text-primary mb-4 sm:mb-6 leading-tight"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Fast SIM details check with verified owner and CNIC data
+              Check SIM Owner Details, Phone Number Details & Mobile Number Details with Name
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Our platform is built for Pakistan SIM details check use cases, helping you find SIM owner details,
-              validate CNIC-linked numbers, and review registration records in seconds.
-              Get reliable results with privacy-focused, secure search workflows.
+              Our platform helps you check SIM owner details online, find phone number details, get mobile number details with name,
+              and run SIM number check in seconds. Use sim details by number, sim owner details by number, and live tracker sim data
+              for reliable SIM information system results with privacy-focused, secure search workflows.
             </p>
             <p className="text-muted-foreground text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Designed for fast checks, clear summaries, and safer verification decisions without compromising user privacy.
+              Designed for fast SIM owner details online check, phone number details lookup, number verification, and safer mobile number details decisions without compromising user privacy.
             </p>
 
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
@@ -85,7 +85,7 @@ export function ServiceSection() {
               whileTap={{ scale: 0.95 }}
               className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
-              <span>Explore SIM Check Features</span>
+              <span>Check SIM Owner Details Online</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </motion.button>
           </motion.div>
@@ -105,7 +105,7 @@ export function ServiceSection() {
               >
                 <div className="bg-white/90 rounded-xl sm:rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
                   <h3 className="text-2xl sm:text-3xl mb-1 sm:mb-2 text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>99.9%</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Verification Accuracy</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">SIM Owner Details Accuracy</p>
                 </div>
               </motion.div>
 
@@ -116,7 +116,7 @@ export function ServiceSection() {
               >
                 <div className="bg-white/90 rounded-xl sm:rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
                   <h3 className="text-2xl sm:text-3xl mb-1 sm:mb-2 text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>&lt;2s</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Response Time</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Phone Number Details Response</p>
                 </div>
               </motion.div>
 
@@ -127,7 +127,7 @@ export function ServiceSection() {
               >
                 <div className="bg-white/90 rounded-xl sm:rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
                   <h3 className="text-2xl sm:text-3xl mb-1 sm:mb-2 text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>24/7</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Customer Support</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Mobile Number Check Support</p>
                 </div>
               </motion.div>
 
@@ -138,7 +138,7 @@ export function ServiceSection() {
               >
                 <div className="bg-white/90 rounded-xl sm:rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
                   <h3 className="text-2xl sm:text-3xl mb-1 sm:mb-2 text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>5M+</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Searches</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">SIM Details by Number Searches</p>
                 </div>
               </motion.div>
             </div>

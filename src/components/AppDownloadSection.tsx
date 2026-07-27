@@ -33,23 +33,23 @@ export function AppDownloadSection() {
   const features = [
     {
       icon: Zap,
-      title: 'Instant Tracking',
-      description: 'Track any number in seconds with our lightning-fast mobile app'
+      title: 'Instant SIM Owner Details',
+      description: 'Check SIM owner details online and find phone number details in seconds with our lightning-fast mobile app'
     },
     {
       icon: MapPin,
-      title: 'Live Location',
-      description: 'Get real-time GPS location updates on your mobile device'
+      title: 'Live Tracker SIM Data',
+      description: 'Get live tracker sim data and live tracker mobile number details updates on your mobile device'
     },
     {
       icon: Bell,
-      title: 'Push Notifications',
-      description: 'Receive instant alerts for all your tracking activities'
+      title: 'SIM Number Check Alerts',
+      description: 'Receive instant alerts for SIM number check, mobile number details, and sim details by number activities'
     },
     {
       icon: Shield,
-      title: 'Secure & Private',
-      description: 'End-to-end encryption ensures your data stays protected'
+      title: 'Secure Number Verification',
+      description: 'End-to-end encryption ensures your SIM owner details, phone number details, and number lookup stay protected'
     }
   ];
 
@@ -100,14 +100,14 @@ export function AppDownloadSection() {
               className="text-4xl sm:text-5xl md:text-6xl text-primary mb-6 leading-tight"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Track Numbers
+              Check SIM Owner Details
               <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                 On The Go
               </span>
             </h2>
 
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Download our powerful mobile app and access all SIM tracking features right from your smartphone. Fast, secure, and always at your fingertips.
+              Download our powerful mobile app to check SIM owner details online, find phone number details, get mobile number details with name, and run SIM number check from your smartphone. Fast sim details by number and live tracker sim data, always at your fingertips.
             </p>
 
             {/* Stats */}
@@ -291,7 +291,7 @@ export function AppDownloadSection() {
                         <h3 className="text-xl font-bold text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>
                           SIM OWNER DETAIL
                         </h3>
-                        <p className="text-sm text-muted-foreground">Track & Verify</p>
+                        <p className="text-sm text-muted-foreground">SIM Owner Details & Phone Number Details</p>
                       </div>
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg">
                         <Smartphone className="w-6 h-6 text-white" />
@@ -315,8 +315,8 @@ export function AppDownloadSection() {
                           <MapPin className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
-                          <div className="text-xs text-muted-foreground mb-1">Tracking Number</div>
-                          <div className="text-sm font-semibold text-primary">+92 300 1234567</div>
+                        <div className="text-xs text-muted-foreground mb-1">SIM Number Check</div>
+                        <div className="text-sm font-semibold text-primary">+92 300 1234567</div>
                         </div>
                       </div>
                       <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
@@ -332,7 +332,7 @@ export function AppDownloadSection() {
                           className="h-full bg-gradient-to-r from-accent to-primary"
                         ></motion.div>
                       </div>
-                      <div className="text-xs text-center text-accent mt-2">Locating...</div>
+                      <div className="text-xs text-center text-accent mt-2">Checking SIM Owner Details...</div>
                     </motion.div>
 
                     {/* Quick Stats */}
@@ -363,7 +363,7 @@ export function AppDownloadSection() {
                       }}
                       className="w-full py-4 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-semibold shadow-lg"
                     >
-                      Start Tracking
+                      Start SIM Number Check
                     </motion.button>
 
                     {/* Recent Searches */}
