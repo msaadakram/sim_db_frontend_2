@@ -8,7 +8,7 @@ import { ScrollToTop } from '@/components/ScrollToTop';
 import { Footer } from '@/components/Footer';
 import { generateMeta } from '@/lib/generate-meta';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.simownerdetail.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pak.simownerdetail.app';
 
 export const metadata = generateCarrierComparisonMeta();
 

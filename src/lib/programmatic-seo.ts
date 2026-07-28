@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getCityBySlug, getCarrierBySlug, PakistanCity } from '@/lib/pakistan-cities';
 import { generateMeta, generateStructuredData, generateBreadcrumbSchema } from '@/lib/generate-meta';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.simownerdetail.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pak.simownerdetail.app';
 
 export function generateCityPageMeta(citySlug: string): Metadata {
   const city = getCityBySlug(citySlug);

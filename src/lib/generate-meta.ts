@@ -1,9 +1,26 @@
 import { Metadata } from 'next';
-import { getSiteUrl } from './site-url';
+import { getSiteUrl, getMainSiteUrl, getPkSiteUrl } from './site-url';
 import { getPageKeywordSet, getRelevantCsvKeywords, SIM_OWNER_SEO_KEYWORDS } from './seo-keywords';
 
-const SITE_URL = getSiteUrl();
 const SITE_NAME = 'SIM Owner Details';
+
+function getBaseUrl(path: string): string {
+  // Use subdomain for pk routes
+  if (path.startsWith('/pk/') || path === '/pk') {
+    return getPkSiteUrl();
+  }
+  return getMainSiteUrl();
+}
+
+function getFullUrl(path: string): string {
+  const baseUrl = getBaseUrl(path);
+  return `${baseUrl}${path}`;
+}
+
+function getImageUrl(path: string): string {
+  const baseUrl = getBaseUrl(path);
+  return `${baseUrl}${path}`;
+}
 
 interface MetaOptions {
   title: string;
@@ -40,9 +57,9 @@ export function generateMeta(options: MetaOptions): Metadata {
     nofollow = false,
   } = options;
 
-  const url = `${SITE_URL}${path}`;
-  const defaultImage = `${SITE_URL}/og-default.png`;
-  const ogImages = images.length > 0 ? images.map(img => `${SITE_URL}${img}`) : [defaultImage];
+  const url = getFullUrl(path);
+  const defaultImage = getImageUrl('/og-default.png');
+  const ogImages = images.length > 0 ? images.map(img => getImageUrl(img)) : [defaultImage];
 
   let finalKeywords = [...keywords];
   if (surface) {
@@ -186,10 +203,12 @@ export function generateSearchMeta(query: string, type: 'mobile' | 'cnic'): Meta
   });
 }
 
-export function generateStructuredData(type: 'website' | 'article' | 'faq' | 'service' | 'webpage', data: any) {
+export function generateStructuredData(type: 'website' | 'article' | 'faq' | 'service' | 'webpage', data: any, path?: string) {
   const base = {
     '@context': 'https://schema.org',
   };
+
+  const siteUrl = path && path.startsWith('/pk/') ? getFullUrl(path) : getSiteUrl();
 
   switch (type) {
     case 'website':
@@ -197,12 +216,12 @@ export function generateStructuredData(type: 'website' | 'article' | 'faq' | 'se
         ...base,
         '@type': 'WebSite',
         name: SITE_NAME,
-        url: SITE_URL,
+        url: siteUrl,
         potentialAction: {
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: `${SITE_URL}/search?query={search_term_string}`,
+            urlTemplate: `${siteUrl}/search?query={search_term_string}`,
           },
           'query-input': 'required name=search_term_string',
         },
@@ -214,25 +233,25 @@ export function generateStructuredData(type: 'website' | 'article' | 'faq' | 'se
         '@type': 'BlogPosting',
         headline: data.title,
         description: data.excerpt,
-        image: data.image ? `${SITE_URL}${data.image}` : `${SITE_URL}/og-default.png`,
+        image: data.image ? getImageUrl(data.image) : `${siteUrl}/og-default.png`,
         datePublished: data.publishedDate,
         dateModified: data.modifiedDate || data.publishedDate,
         author: {
           '@type': 'Person',
           name: data.author,
-          url: `${SITE_URL}/author/${data.author.toLowerCase().replace(/\s+/g, '-')}`,
+          url: `${siteUrl}/author/${data.author.toLowerCase().replace(/\s+/g, '-')}`,
         },
         publisher: {
           '@type': 'Organization',
           name: SITE_NAME,
           logo: {
             '@type': 'ImageObject',
-            url: `${SITE_URL}/icon-512.png`,
+            url: `${siteUrl}/icon-512.png`,
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `${SITE_URL}/blog/${data.slug}`,
+          '@id': `${siteUrl}/blog/${data.slug}`,
         },
         keywords: data.keywords?.join(', '),
         articleSection: data.category,
@@ -261,7 +280,7 @@ export function generateStructuredData(type: 'website' | 'article' | 'faq' | 'se
         provider: {
           '@type': 'Organization',
           name: SITE_NAME,
-          url: SITE_URL,
+          url: siteUrl,
         },
         areaServed: 'PK',
         serviceType: data.serviceType,
@@ -279,11 +298,11 @@ export function generateStructuredData(type: 'website' | 'article' | 'faq' | 'se
         '@type': 'WebPage',
         name: data.title,
         description: data.description,
-        url: `${SITE_URL}${data.path}`,
+        url: data.path.startsWith('http') ? data.path : (data.path.startsWith('/pk/') ? getFullUrl(data.path) : `${getSiteUrl()}${data.path}`),
         isPartOf: {
           '@type': 'WebSite',
           name: SITE_NAME,
-          url: SITE_URL,
+          url: siteUrl,
         },
       };
 
@@ -300,18 +319,19 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`,
+      item: item.url.startsWith('http') ? item.url : (item.url.startsWith('/pk/') ? getFullUrl(item.url) : `${getSiteUrl()}${item.url}`),
     })),
   };
 }
 
 export function generateOrganizationSchema() {
+  const mainSiteUrl = getMainSiteUrl();
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
-    url: SITE_URL,
-    logo: `${SITE_URL}/icon-512.png`,
+    url: mainSiteUrl,
+    logo: `${mainSiteUrl}/icon-512.png`,
     sameAs: [
       'https://facebook.com/simownerdetail',
       'https://twitter.com/simownerdetail',

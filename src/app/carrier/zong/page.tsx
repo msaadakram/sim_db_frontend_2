@@ -5,7 +5,7 @@ import { GlobalSearchCard } from '@/components/GlobalSearchCard';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { generateMeta, generateStructuredData, generateBreadcrumbSchema } from '@/lib/generate-meta';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.simownerdetail.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pak.simownerdetail.app';
 const ZONG_URL = `${SITE_URL}/carrier/zong`;
 
 const ZONG_FAQ_JSON_LD = {

@@ -1,13 +1,18 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const DEFAULT_SITE_URL = 'https://www.simownerdetail.app';
+const MAIN_SITE_URL = 'https://pak.simownerdetail.app';
+const PK_SITE_URL = 'https://pak.simownerdetail.app';
 const PLACEHOLDER_HOSTS = new Set([
   'your-domain.com',
   'www.your-domain.com',
   'example.com',
   'www.example.com',
   'localhost',
+  // Legacy/decommissioned hosts — any env value pointing here is normalized to the canonical host.
+  'simownerdetail.app',
+  'www.simownerdetail.app',
+  'www.pak.simownerdetail.app',
 ]);
 
 const BUILD_LASTMOD = (() => {
@@ -39,12 +44,12 @@ function isPlaceholderUrl(url) {
 
 function normalizeSiteUrl(url) {
   if (!url) {
-    return DEFAULT_SITE_URL;
+    return MAIN_SITE_URL;
   }
 
   const trimmed = String(url).trim();
   if (!trimmed) {
-    return DEFAULT_SITE_URL;
+    return MAIN_SITE_URL;
   }
 
   const withProtocol =
@@ -55,7 +60,7 @@ function normalizeSiteUrl(url) {
   const normalized = withProtocol.replace(/\/+$/, '');
 
   if (isPlaceholderUrl(normalized)) {
-    return DEFAULT_SITE_URL;
+    return MAIN_SITE_URL;
   }
 
   return normalized;
@@ -118,35 +123,35 @@ const PAKISTAN_CARRIERS = ['jazz', 'zong', 'telenor', 'ufone'];
 function generatePkPaths() {
   const paths = [];
 
-  // /pk index
+  // /pk index - on subdomain
   paths.push({
-    loc: '/pk',
+    loc: `${PK_SITE_URL}/pk`,
     changefreq: 'daily',
     priority: 0.9,
     lastmod: BUILD_LASTMOD,
   });
 
-  // /pk/carriers/compare
+  // /pk/carriers/compare - on subdomain
   paths.push({
-    loc: '/pk/carriers/compare',
+    loc: `${PK_SITE_URL}/pk/carriers/compare`,
     changefreq: 'weekly',
     priority: 0.8,
     lastmod: BUILD_LASTMOD,
   });
 
-  // /pk/check/[city] - 23 cities
+  // /pk/check/[city] - 23 cities - on subdomain
   for (const city of PAKISTAN_CITIES) {
     paths.push({
-      loc: `/pk/check/${city}`,
+      loc: `${PK_SITE_URL}/pk/check/${city}`,
       changefreq: 'weekly',
       priority: 0.85,
       lastmod: BUILD_LASTMOD,
     });
 
-    // /pk/check/[city]/[carrier] - 4 carriers per city = 92 pages
+    // /pk/check/[city]/[carrier] - 4 carriers per city = 92 pages - on subdomain
     for (const carrier of PAKISTAN_CARRIERS) {
       paths.push({
-        loc: `/pk/check/${city}/${carrier}`,
+        loc: `${PK_SITE_URL}/pk/check/${city}/${carrier}`,
         changefreq: 'weekly',
         priority: 0.8,
         lastmod: BUILD_LASTMOD,
@@ -159,15 +164,10 @@ function generatePkPaths() {
 
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: normalizeSiteUrl(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      process.env.SITE_URL ||
-      process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-      process.env.VERCEL_URL
-  ),
+  siteUrl: MAIN_SITE_URL,
   generateRobotsTxt: true,
   sitemapSize: 5000,
-  exclude: ['/api/*', '/search*'],
+  exclude: ['/api/*', '/search*'], // pk routes now live on the same canonical host
   robotsTxtOptions: {
     policies: [
       {
@@ -186,7 +186,7 @@ const config = {
     return {
       loc: pathName,
       changefreq: isBlogPost ? 'weekly' : isPk ? 'weekly' : 'daily',
-      priority: isHome ? 1.0 : isBlogListing ? 0.9 : isBlogPost ? 0.7 : isPk ? 0.85 : 0.8,
+      priority: isPk ? 0.85 : isHome ? 1.0 : isBlogListing ? 0.9 : isBlogPost ? 0.7 : 0.8,
       lastmod: BUILD_LASTMOD,
       alternateRefs: siteConfig.alternateRefs ?? [],
     };
@@ -196,13 +196,14 @@ const config = {
     const pkPaths = generatePkPaths();
 
     const blogPaths = blogSlugs.map((slug) => ({
-      loc: `/blog/${slug}`,
+      loc: `${MAIN_SITE_URL}/blog/${slug}`,
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: BUILD_LASTMOD,
       alternateRefs: siteConfig.alternateRefs ?? [],
     }));
 
+    // pkPaths already emit absolute URLs on the canonical host
     return [...blogPaths, ...pkPaths];
   },
 };

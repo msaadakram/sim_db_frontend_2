@@ -2,25 +2,26 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { PAKISTAN_CITIES, PAKISTAN_CARRIERS } from '@/lib/pakistan-cities';
 import { generateCityStructuredData, generateCityBreadcrumbs } from '@/lib/programmatic-seo';
-import { generateMeta, generateStructuredData, generateBreadcrumbSchema } from '@/lib/generate-meta';
+import { generateMeta } from '@/lib/generate-meta';
+import { getPkSiteUrl } from '@/lib/site-url';
 import { Header } from '@/components/Header';
 import { GlobalSearchCard } from '@/components/GlobalSearchCard';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Footer } from '@/components/Footer';
 import { Suspense } from 'react';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.simownerdetail.app';
+const PK_SITE_URL = getPkSiteUrl();
 
 const PK_INDEX_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Pakistan SIM Owner Details - Complete Verification Guide',
   description: 'Complete Pakistan SIM verification guide. Check SIM owner details, phone number details, mobile number details, SIM number check, SIM details by number, and live tracker SIM data for all cities and carriers (Jazz, Zong, Telenor, Ufone) in Pakistan.',
-  url: `${SITE_URL}/pk`,
+  url: `${PK_SITE_URL}/pk`,
   isPartOf: {
     '@type': 'WebSite',
     name: 'SIM Owner Details',
-    url: SITE_URL,
+    url: PK_SITE_URL,
   },
   mainEntity: {
     '@type': 'ItemList',
@@ -31,7 +32,7 @@ const PK_INDEX_SCHEMA = {
       item: {
         '@type': 'WebPage',
         name: `SIM Owner Details ${city.name}`,
-        url: `${SITE_URL}/pk/check/${city.slug}`,
+        url: `${PK_SITE_URL}/pk/check/${city.slug}`,
         description: `Check SIM owner details in ${city.name}, Pakistan. Phone number details, mobile number details, SIM number check for Jazz, Zong, Telenor, Ufone.`,
       },
     })),
@@ -44,17 +45,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_PK',
-    url: `${SITE_URL}/pk`,
+    url: `${PK_SITE_URL}/pk`,
     siteName: 'SIM Owner Details',
     title: 'Pakistan SIM Owner Details | Complete Verification Guide for All Cities & Carriers',
     description: 'Check SIM owner details in Pakistan cities. Phone number details, mobile number details with name, SIM number check. Official Jazz, Zong, Telenor, Ufone verification.',
-    images: [{ url: `${SITE_URL}/og-pk.webp`, width: 1200, height: 630 }],
+    images: [{ url: `${PK_SITE_URL}/og-pk.webp`, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pakistan SIM Owner Details | Complete Verification Guide',
     description: 'Check SIM owner details in Pakistan cities. Phone number details, mobile number details with name, SIM number check. Official Jazz, Zong, Telenor, Ufone verification.',
-    images: [`${SITE_URL}/og-pk.webp`],
+    images: [`${PK_SITE_URL}/og-pk.webp`],
   },
   robots: {
     index: true,
