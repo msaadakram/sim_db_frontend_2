@@ -106,6 +106,57 @@ function getBlogSlugs() {
   return [...new Set(Array.from(matches, (match) => match[1]))];
 }
 
+const PAKISTAN_CITIES = [
+  'karachi', 'lahore', 'faisalabad', 'rawalpindi', 'multan', 'hyderabad',
+  'gujranwala', 'peshawar', 'quetta', 'islamabad', 'sargodha', 'sialkot',
+  'bahawalpur', 'sukkur', 'jhang', 'sheikhupura', 'gujrat', 'mardan',
+  'kasur', 'sahiwal', 'okara', 'mirpur-khas', 'rahim-yar-khan'
+];
+
+const PAKISTAN_CARRIERS = ['jazz', 'zong', 'telenor', 'ufone'];
+
+function generatePkPaths() {
+  const paths = [];
+
+  // /pk index
+  paths.push({
+    loc: '/pk',
+    changefreq: 'daily',
+    priority: 0.9,
+    lastmod: BUILD_LASTMOD,
+  });
+
+  // /pk/carriers/compare
+  paths.push({
+    loc: '/pk/carriers/compare',
+    changefreq: 'weekly',
+    priority: 0.8,
+    lastmod: BUILD_LASTMOD,
+  });
+
+  // /pk/check/[city] - 23 cities
+  for (const city of PAKISTAN_CITIES) {
+    paths.push({
+      loc: `/pk/check/${city}`,
+      changefreq: 'weekly',
+      priority: 0.85,
+      lastmod: BUILD_LASTMOD,
+    });
+
+    // /pk/check/[city]/[carrier] - 4 carriers per city = 92 pages
+    for (const carrier of PAKISTAN_CARRIERS) {
+      paths.push({
+        loc: `/pk/check/${city}/${carrier}`,
+        changefreq: 'weekly',
+        priority: 0.8,
+        lastmod: BUILD_LASTMOD,
+      });
+    }
+  }
+
+  return paths;
+}
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: normalizeSiteUrl(
@@ -130,25 +181,29 @@ const config = {
     const isHome = pathName === '/';
     const isBlogListing = pathName === '/blog';
     const isBlogPost = pathName.startsWith('/blog/') && !isBlogListing;
+    const isPk = pathName.startsWith('/pk');
 
     return {
       loc: pathName,
-      changefreq: isBlogPost ? 'weekly' : 'daily',
-      priority: isHome ? 1.0 : isBlogListing ? 0.9 : isBlogPost ? 0.7 : 0.8,
+      changefreq: isBlogPost ? 'weekly' : isPk ? 'weekly' : 'daily',
+      priority: isHome ? 1.0 : isBlogListing ? 0.9 : isBlogPost ? 0.7 : isPk ? 0.85 : 0.8,
       lastmod: BUILD_LASTMOD,
       alternateRefs: siteConfig.alternateRefs ?? [],
     };
   },
   additionalPaths: async (siteConfig) => {
     const blogSlugs = getBlogSlugs();
+    const pkPaths = generatePkPaths();
 
-    return blogSlugs.map((slug) => ({
+    const blogPaths = blogSlugs.map((slug) => ({
       loc: `/blog/${slug}`,
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: BUILD_LASTMOD,
       alternateRefs: siteConfig.alternateRefs ?? [],
     }));
+
+    return [...blogPaths, ...pkPaths];
   },
 };
 
