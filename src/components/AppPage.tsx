@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Smartphone, Shield, Zap, MapPin, CheckCircle, Star, Download, Apple, Play, Phone, Globe, Search, Bell, Users, ArrowRight, ChevronDown } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
@@ -159,7 +160,9 @@ export function AppPage() {
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <motion.a
-                  href="#"
+                  href="https://apps.apple.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl group"
@@ -173,7 +176,9 @@ export function AppPage() {
                 </motion.a>
 
                 <motion.a
-                  href="#"
+                  href="https://play.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-2xl hover:shadow-xl transition-all duration-300 shadow-lg group"
@@ -594,7 +599,9 @@ export function AppPage() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="#"
+              href="https://apps.apple.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-2xl group w-full sm:w-auto"
@@ -608,7 +615,9 @@ export function AppPage() {
             </motion.a>
 
             <motion.a
-              href="#"
+              href="https://play.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-2xl group w-full sm:w-auto"

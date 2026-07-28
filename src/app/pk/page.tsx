@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { PAKISTAN_CITIES, PAKISTAN_CARRIERS } from '@/lib/pakistan-cities';
+import { generateCityStructuredData, generateCityBreadcrumbs } from '@/lib/programmatic-seo';
 import { generateMeta, generateStructuredData, generateBreadcrumbSchema } from '@/lib/generate-meta';
 import { Header } from '@/components/Header';
 import { GlobalSearchCard } from '@/components/GlobalSearchCard';
@@ -38,14 +40,14 @@ const PK_INDEX_SCHEMA = {
 
 export const metadata: Metadata = {
   title: 'Pakistan SIM Owner Details | Phone Number Details, Mobile Number Check & SIM Verification',
-  description: 'Complete Pakistan SIM verification guide. Check SIM owner details, phone number details, mobile number details, SIM number check, SIM details by number, and live tracker SIM data for all cities and carriers (Jazz, Zong, Telenor, Ufone) in Pakistan.',
+  description: 'Complete Pakistan SIM verification guide. Check SIM owner details, phone number details, mobile number details with name, SIM number check, SIM details by number, and live tracker SIM data for all cities and carriers.',
   openGraph: {
     type: 'website',
     locale: 'en_PK',
     url: `${SITE_URL}/pk`,
     siteName: 'SIM Owner Details',
     title: 'Pakistan SIM Owner Details | Complete Verification Guide for All Cities & Carriers',
-    description: 'Check SIM owner details in Pakistan cities. Phone number details, mobile number details with name, SIM number check, SIM details by number. Official Jazz, Zong, Telenor, Ufone verification.',
+    description: 'Check SIM owner details in Pakistan cities. Phone number details, mobile number details with name, SIM number check. Official Jazz, Zong, Telenor, Ufone verification.',
     images: [{ url: `${SITE_URL}/og-pk.webp`, width: 1200, height: 630 }],
   },
   twitter: {
@@ -74,7 +76,7 @@ export default function PakistanIndexPage() {
         <div className="pt-16 sm:pt-20">
           <GlobalSearchCard className="pt-5 sm:pt-6 pb-5 sm:pb-7" />
 
-          <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-primary via-accent to-primary/10">
+          <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-primary via-accent to-primary/10">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4">
@@ -87,14 +89,14 @@ export default function PakistanIndexPage() {
                   Complete SIM verification guide for Pakistan. Check SIM owner details, phone number details, mobile number details with name, SIM number check, and live tracker SIM data across all cities and carriers.
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
-                  <a href="/pk/check" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-full hover:bg-white/90 transition-all duration-300 text-sm font-medium shadow-lg">
+                  <Link href="/pk/check" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-full hover:bg-white/90 transition-all duration-300 text-sm font-medium shadow-lg">
                     Browse All Cities
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                  </a>
-                  <a href="/pk/carriers/compare" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white/10 transition-all duration-300 text-sm font-medium">
+                  </Link>
+                  <Link href="/pk/carriers/compare" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white/10 transition-all duration-300 text-sm font-medium">
                     Compare Carriers
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -132,7 +134,7 @@ export default function PakistanIndexPage() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {PAKISTAN_CITIES.slice(0, 16).map((city, i) => (
-                  <a key={city.slug} href={`/pk/check/${city.slug}`} className="group relative bg-white border border-border/60 rounded-2xl p-6 hover:shadow-xl hover:border-primary/30 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+                  <Link key={city.slug} href={`/pk/check/${city.slug}`} className="group relative bg-white border border-border/60 rounded-2xl p-6 hover:shadow-xl hover:border-primary/30 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative z-10">
                       <div className="flex items-center justify-between mb-4">
@@ -147,7 +149,7 @@ export default function PakistanIndexPage() {
                       <p className="text-muted-foreground text-sm mb-4">Population: {city.population.toLocaleString()}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {PAKISTAN_CARRIERS.slice(0, 4).map((carrier, ci) => (
-                          <span key={ci} className="px-2 py-1 bg-[var(--carrier-color)]10 text-[var(--carrier-color)] rounded-full text-xs font-medium group-hover:bg-[var(--carrier-color)] group-hover:text-white transition-all" style={{ '--carrier-color': carrier.color } as React.CSSProperties}>
+                          <span key={ci} className="px-2 py-1 bg-[var(--carrier-color)]10 text-[var(--carrier-color)] rounded-full text-xs font-medium group-hover:bg-[var(--carrier-color)] group-hover:text-white transition-all" style={({ '--carrier-color': carrier.color } as React.CSSProperties)}>
                             {carrier.shortName}
                           </span>
                         ))}
@@ -157,15 +159,15 @@ export default function PakistanIndexPage() {
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                       </span>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               <div className="text-center mt-10">
-                <a href="/pk/check" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 text-sm font-medium shadow-lg">
+                <Link href="/pk/check" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 text-sm font-medium shadow-lg">
                   View All {PAKISTAN_CITIES.length} Cities
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -183,7 +185,7 @@ export default function PakistanIndexPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 {PAKISTAN_CARRIERS.map((carrier) => (
-                  <a key={carrier.slug} href={`/pk/carriers/${carrier.slug}`} className="relative rounded-2xl bg-gradient-to-br from-[var(--carrier-color)] to-[var(--carrier-logo-color)] p-6 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group text-white overflow-hidden" style={{ '--carrier-color': carrier.color, '--carrier-logo-color': carrier.logoColor } as React.CSSProperties}>
+                  <Link key={carrier.slug} href={`/pk/carriers/${carrier.slug}`} className="relative rounded-2xl bg-gradient-to-br from-[var(--carrier-color)] to-[var(--carrier-logo-color)] p-6 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group text-white overflow-hidden" style={({ '--carrier-color': carrier.color, '--carrier-logo-color': carrier.logoColor } as React.CSSProperties)}>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-4">
@@ -210,15 +212,15 @@ export default function PakistanIndexPage() {
                         </svg>
                       </span>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               <div className="text-center mb-12">
-                <a href="/pk/carriers/compare" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 text-sm font-medium shadow-lg">
+                <Link href="/pk/carriers/compare" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 text-sm font-medium shadow-lg">
                   Compare All Carriers Side-by-Side
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -257,7 +259,7 @@ export default function PakistanIndexPage() {
                   const carrier = PAKISTAN_CARRIERS.find(c => c.slug === combo.carrier);
                   if (!carrier) return null;
                   return (
-                    <a key={i} href={`/pk/check/${combo.city}/${combo.carrier}`} className="rounded-xl border border-[var(--carrier-color)]20 bg-white p-4 hover:shadow-lg hover:border-[var(--carrier-color)]30 hover:bg-[var(--carrier-color)]5 transition-all duration-300 group" style={{ '--carrier-color': carrier.color } as React.CSSProperties}>
+                    <Link key={i} href={`/pk/check/${combo.city}/${combo.carrier}`} className="rounded-xl border border-[var(--carrier-color)]20 bg-white p-4 hover:shadow-lg hover:border-[var(--carrier-color)]30 hover:bg-[var(--carrier-color)]5 transition-all duration-300 group" style={{ '--carrier-color': carrier.color } as React.CSSProperties}>
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-[var(--carrier-color)]15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform" style={{ '--carrier-color': carrier.color } as React.CSSProperties}>
                           <span className="text-xs font-bold" style={{ color: carrier.color }}>{carrier.shortName}</span>
@@ -267,7 +269,7 @@ export default function PakistanIndexPage() {
                           <p className="text-xs text-muted-foreground">SIM Owner Details</p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   )
                 })}
               </div>
@@ -318,8 +320,7 @@ export default function PakistanIndexPage() {
                     <svg className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                   </div>
                   <h3 className="text-xl text-primary mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>Franchise Visit</h3>
-                  <p className="text-muted-foreground mb-4">Visit authorized franchise with original CNIC for biometric verification and complete SIM ownership details.</p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <p className="text-muted-foreground mb-4">Visit authorized franchise with original CNIC for biometric verification and complete SIM ownership details.</p>                  <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2"><span className="text-amber-500">✓</span> Original CNIC required</li>
                     <li className="flex items-center gap-2"><span className="text-amber-500">✓</span> Fingerprint biometric scan</li>
                     <li className="flex items-center gap-2"><span className="text-amber-500">✓</span> Get all SIMs listed</li>

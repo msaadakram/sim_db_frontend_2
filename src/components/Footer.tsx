@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -26,7 +27,9 @@ export function Footer() {
             <div className="flex gap-3 sm:gap-4">
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="#"
+                href="https://facebook.com/simownerdetail"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-accent transition-colors flex items-center justify-center"
                 aria-label="Facebook"
               >
@@ -34,7 +37,9 @@ export function Footer() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="#"
+                href="https://twitter.com/simownerdetail"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-accent transition-colors flex items-center justify-center"
                 aria-label="Twitter"
               >
@@ -42,7 +47,9 @@ export function Footer() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="#"
+                href="https://instagram.com/simownerdetail"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-accent transition-colors flex items-center justify-center"
                 aria-label="Instagram"
               >
@@ -50,7 +57,9 @@ export function Footer() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="#"
+                href="https://linkedin.com/company/simownerdetail"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-accent transition-colors flex items-center justify-center"
                 aria-label="LinkedIn"
               >
@@ -66,22 +75,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Owner Details Online Check</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">SIM Owner Details Online Check</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Phone Number Details with Name</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">Phone Number Details with Name</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Mobile Number Details Check</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">Mobile Number Details Check</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Number Check Tool</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">SIM Number Check Tool</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Details by Number</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">SIM Details by Number</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Live Tracker SIM Data</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">Live Tracker SIM Data</Link>
               </li>
             </ul>
           </div>
@@ -93,19 +102,19 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Owner Details by Number</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">SIM Owner Details by Number</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Phone Number Owner Lookup</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">Phone Number Owner Lookup</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Number Verification & Check</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">Number Verification & Check</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">Mobile Number Owner Name Search</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">Mobile Number Owner Name Search</Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors">SIM Information System</a>
+                <Link href="/pk/check" className="text-white/70 hover:text-accent transition-colors">SIM Information System</Link>
               </li>
             </ul>
           </div>
@@ -154,9 +163,9 @@ export function Footer() {
               © {currentYear} SIM Owner Details & Phone Number Details. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-              <a href="#" className="text-white/70 hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="#" className="text-white/70 hover:text-accent transition-colors">Terms of Service</a>
-              <a href="#" className="text-white/70 hover:text-accent transition-colors">Cookie Policy</a>
+              <Link href="/disclaimer" className="text-white/70 hover:text-accent transition-colors">Privacy Policy</Link>
+              <Link href="/disclaimer" className="text-white/70 hover:text-accent transition-colors">Terms of Service</Link>
+              <Link href="/disclaimer" className="text-white/70 hover:text-accent transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

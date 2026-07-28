@@ -132,7 +132,7 @@ export function Header() {
             <nav className="hidden md:flex items-center gap-1 lg:gap-2 xl:gap-4">
               {isHomePage ? (
                 <>
-                  <NavLink href="#home">Home</NavLink>
+                  <NavLink href="/">Home</NavLink>
                   <RouterNavLink to="/features">Features</RouterNavLink>
                   <RouterNavLink to="/blog">Blog</RouterNavLink>
                   <RouterNavLink to="/apps" icon={<Smartphone className="w-4 h-4" />}>Apps</RouterNavLink>
@@ -297,10 +297,29 @@ export function Header() {
 
 // Desktop/Tablet Navigation Link Component
 function NavLink({ href, children, icon }: { href: string; children: React.ReactNode; icon?: React.ReactNode }) {
+  const isAnchor = href.startsWith('#');
+  
+  if (isAnchor) {
+    return (
+      <motion.a
+        href={href}
+        whileHover={{ y: -2 }}
+        className="relative px-3 lg:px-4 py-2 text-foreground hover:text-accent transition-colors text-sm lg:text-base font-medium rounded-xl hover:bg-muted/50 flex items-center gap-2 group"
+        style={{ fontFamily: "'Inter', sans-serif" }}
+      >
+        {icon}
+        {children}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          layoutId="underline"
+        />
+      </motion.a>
+    );
+  }
+  
   return (
-    <motion.a
+    <Link
       href={href}
-      whileHover={{ y: -2 }}
       className="relative px-3 lg:px-4 py-2 text-foreground hover:text-accent transition-colors text-sm lg:text-base font-medium rounded-xl hover:bg-muted/50 flex items-center gap-2 group"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
@@ -310,7 +329,7 @@ function NavLink({ href, children, icon }: { href: string; children: React.React
         className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
         layoutId="underline"
       />
-    </motion.a>
+    </Link>
   );
 }
 

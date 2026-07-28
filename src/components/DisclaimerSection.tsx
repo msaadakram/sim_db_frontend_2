@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { AlertCircle, Shield, Lock, Info } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
@@ -145,9 +146,9 @@ export function DisclaimerSection() {
         >
           <p className="text-muted-foreground text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
             For questions or concerns regarding our disclaimer or terms, please{' '}
-            <a href="#contact" className="text-accent hover:text-primary transition-colors font-medium">
+            <Link href="/contact" className="text-accent hover:text-primary transition-colors font-medium">
               contact us
-            </a>
+            </Link>
           </p>
         </motion.div>
       </div>
